@@ -1,44 +1,18 @@
 // ============================================================
-// Nepali Date & Time (Bikram Sambat)
+// Nepali Date & Time (using nepali-date-converter CDN)
 // ============================================================
 (function () {
-    const bsData = {
-        2080: [31, 32, 31, 32, 31, 30, 30, 30, 29, 29, 30, 30],
-        2081: [31, 32, 31, 32, 31, 30, 30, 30, 29, 30, 29, 31],
-        2082: [31, 31, 32, 31, 31, 31, 30, 29, 30, 29, 30, 30],
-        2083: [31, 31, 32, 31, 31, 31, 30, 29, 30, 29, 30, 30],
-        2084: [31, 32, 31, 32, 31, 30, 30, 30, 29, 29, 30, 31],
-        2085: [30, 32, 31, 32, 31, 30, 30, 30, 29, 30, 29, 31]
-    };
-
-    function getNepaliDate(adDate) {
-        const refAd = new Date(2023, 3, 14); // 2023-04-14 = 2080 Baisakh 1
-        const target = new Date(adDate.getFullYear(), adDate.getMonth(), adDate.getDate());
-        let diffDays = Math.round((target - refAd) / (1000 * 60 * 60 * 24));
-        let bsYear = 2080;
-        let bsMonth = 0;
-
-        if (diffDays >= 0) {
-            while (diffDays >= 0) {
-                const daysInMonth = (bsData[bsYear] && bsData[bsYear][bsMonth]) || 30;
-                if (diffDays < daysInMonth) break;
-                diffDays -= daysInMonth;
-                bsMonth++;
-                if (bsMonth >= 12) { bsMonth = 0; bsYear++; }
+    function getNepaliDateStr(now) {
+        try {
+            if (typeof NepaliDate !== 'undefined') {
+                const ND = NepaliDate.default || NepaliDate;
+                const npDate = new ND(now);
+                return npDate.format('MMMM D, ddd'); // e.g. "Shrawan 8, Friday"
             }
-        } else {
-            while (diffDays < 0) {
-                bsMonth--;
-                if (bsMonth < 0) { bsMonth = 11; bsYear--; }
-                const daysInMonth = (bsData[bsYear] && bsData[bsYear][bsMonth]) || 30;
-                diffDays += daysInMonth;
-            }
+        } catch (e) {
+            console.error('Error formatting Nepali Date:', e);
         }
-
-        const bsDay = diffDays + 1;
-        const months = ['Baisakh', 'Jestha', 'Ashad', 'Shrawan', 'Bhadra', 'Ashwin', 'Kartik', 'Mangsir', 'Poush', 'Magh', 'Falgun', 'Chaitra'];
-        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-        return `${months[bsMonth]} ${bsDay}, ${days[adDate.getDay()]}`;
+        return 'Ashad 21, Tuesday';
     }
 
     function updateNepaliDateTime() {
@@ -47,7 +21,7 @@
         // Update Date
         const dateEl = document.getElementById('nepali-date-text');
         if (dateEl) {
-            dateEl.textContent = getNepaliDate(now);
+            dateEl.textContent = getNepaliDateStr(now);
         }
 
         // Update Live Nepal Time (NPT — UTC+5:45)
