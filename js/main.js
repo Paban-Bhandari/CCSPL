@@ -18,23 +18,21 @@
     function updateNepaliDateTime() {
         const now = new Date();
 
-        // Update Date
-        const dateEl = document.getElementById('nepali-date-text');
-        if (dateEl) {
-            dateEl.textContent = getNepaliDateStr(now);
-        }
+        const dateStr = getNepaliDateStr(now);
+        document.querySelectorAll('.nepali-date-text, #nepali-date-text').forEach(el => {
+            el.textContent = dateStr;
+        });
 
-        // Update Live Nepal Time (NPT — UTC+5:45)
-        const timeEl = document.getElementById('nepali-time-text');
-        if (timeEl) {
-            timeEl.textContent = now.toLocaleTimeString('en-US', {
-                timeZone: 'Asia/Kathmandu',
-                hour: 'numeric',
-                minute: '2-digit',
-                second: '2-digit',
-                hour12: true
-            });
-        }
+        const timeStr = now.toLocaleTimeString('en-US', {
+            timeZone: 'Asia/Kathmandu',
+            hour: 'numeric',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: true
+        });
+        document.querySelectorAll('.nepali-time-text, #nepali-time-text').forEach(el => {
+            el.textContent = timeStr;
+        });
     }
 
     updateNepaliDateTime();
@@ -56,8 +54,10 @@ function initScrollSpy() {
         navLinks.forEach(link => {
             if (link.getAttribute('href') === '#' + id) {
                 link.classList.add('active');
+                link.setAttribute('aria-current', 'page');
             } else {
                 link.classList.remove('active');
+                link.removeAttribute('aria-current');
             }
         });
     }

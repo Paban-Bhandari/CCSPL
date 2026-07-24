@@ -29,17 +29,63 @@
 
 <body class="bg-gray-50 text-[#0B2A4A] font-[Inter]" x-data="{ sidebarOpen: false }">
 
-    <!-- MOBILE TOP BAR (shown only below lg) -->
-    <div class="lg:hidden fixed top-0 left-0 right-0 z-40 flex items-center justify-between bg-white border-b border-gray-200 px-4 py-3">
-        <a href="#home" class="flex items-center gap-2">
-            <img src="assets/CCSPL LOGO.png" alt="Chandrajyoti Construction Logo" class="h-11 w-auto">
-            <span class="font-[Montserrat] font-bold text-sm text-[#0B2A4A]">Chandrajyoti Construction</span>
-        </a>
-        <button @click="sidebarOpen = !sidebarOpen" class="text-[#0B2A4A] p-2" aria-label="Toggle menu">
-            <i x-show="!sidebarOpen" class="fa-solid fa-bars text-xl"></i>
-            <i x-show="sidebarOpen" class="fa-solid fa-xmark text-xl"></i>
-        </button>
-    </div>
+    <!-- MOBILE / TABLET TOP HEADER (shown only below lg) -->
+    <header class="lg:hidden fixed top-0 left-0 right-0 z-40 flex flex-col shadow-sm">
+        <!-- Top: Utility Bar (shown on sm & md) -->
+        <div class="hidden sm:flex items-center justify-between bg-[#0B2A4A] text-white text-xs px-4 py-2">
+            <!-- Left: Contact Info -->
+            <div class="flex items-center gap-3 font-semibold">
+                <a href="tel:9851051625" class="flex items-center gap-1.5 text-white hover:text-[#F5811F] transition">
+                    <i class="fa-solid fa-phone text-[#F5811F]"></i>
+                    <span>9851051625</span>
+                </a>
+                <span class="text-white/20 font-light">|</span>
+                <a href="mailto:ccskathmandu123@gmail.com" class="flex items-center gap-1.5 text-white hover:text-[#F5811F] transition">
+                    <i class="fa-solid fa-envelope text-[#F5811F]"></i>
+                    <span>ccskathmandu123@gmail.com</span>
+                </a>
+            </div>
+
+            <!-- Right: Nepali Date & Time -->
+            <div class="flex items-center gap-3 text-gray-300 font-normal">
+                <div class="flex items-center gap-1.5">
+                    <i class="fa-regular fa-calendar-days text-[#F5811F]/80"></i>
+                    <span class="nepali-date-text">Ashad 21, Tuesday</span>
+                </div>
+                <span class="text-white/20 font-light">|</span>
+                <div class="flex items-center gap-1.5">
+                    <i class="fa-regular fa-clock text-[#F5811F]/80"></i>
+                    <span class="nepali-time-text">--:--:-- --</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom: Navbar with Logo + Date/Time chip + Hamburger button -->
+        <div class="flex items-center justify-between bg-white border-b border-gray-200 px-4 py-3">
+            <a href="#home" class="flex items-center gap-2">
+                <img src="assets/CCSPL LOGO.png" alt="Chandrajyoti Construction Logo" class="h-11 w-auto">
+            </a>
+
+            <!-- Right side: Date/Time chip + Hamburger (mobile only) -->
+            <div class="flex items-center gap-1.5">
+                <!-- Mobile-only: Nepali Date & Time (hidden on sm+ since utility bar covers it) -->
+                <div class="sm:hidden flex flex-col items-start border border-gray-200 rounded px-2.5 py-1.5 text-[9px] text-gray-400 leading-tight">
+                    <span class="flex items-center gap-1">
+                        <i class="fa-regular fa-calendar-days text-[#F5811F]/70 text-[9px]"></i>
+                        <span class="nepali-date-text">Ashad 21, Tue</span>
+                    </span>
+                    <span class="flex items-center gap-1 mt-0.5">
+                        <i class="fa-regular fa-clock text-[#F5811F]/70 text-[9px]"></i>
+                        <span class="nepali-time-text">--:--</span>
+                    </span>
+                </div>
+                <button @click="sidebarOpen = !sidebarOpen" :aria-expanded="sidebarOpen" class="text-[#0B2A4A] p-2" aria-label="Toggle menu">
+                    <i x-show="!sidebarOpen" class="fa-solid fa-bars text-xl"></i>
+                    <i x-show="sidebarOpen" class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
 
     <!-- SIDEBAR -->
     <aside
@@ -61,43 +107,43 @@
         <nav class="flex-1 overflow-y-auto py-4">
             <ul class="flex flex-col divide-y divide-gray-100">
                 <li>
-                    <a href="#home" @click="sidebarOpen = false" class="sidebar-link active flex items-center gap-3.5 px-6 py-2.5 text-xs font-bold tracking-wider text-[#0B2A4A] border-l-4 border-transparent hover:bg-orange-50 hover:text-[#F5811F] transition-all">
+                    <a href="#home" @click="sidebarOpen = false" aria-current="page" class="sidebar-link active flex items-center gap-3.5 px-6 py-2.5 text-sm font-bold tracking-wider text-[#0B2A4A] border-l-4 border-transparent hover:bg-orange-50 hover:text-[#F5811F] transition-all">
                         <i class="fa-solid fa-house text-sm shrink-0 w-5 text-center"></i>
                         <span>HOME</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#about" @click="sidebarOpen = false" class="sidebar-link flex items-center gap-3.5 px-6 py-2.5 text-xs font-bold tracking-wider text-gray-700 border-l-4 border-transparent hover:bg-orange-50 hover:text-[#F5811F] transition-all">
+                    <a href="#about" @click="sidebarOpen = false" class="sidebar-link flex items-center gap-3.5 px-6 py-2.5 text-sm font-bold tracking-wider text-gray-700 border-l-4 border-transparent hover:bg-orange-50 hover:text-[#F5811F] transition-all">
                         <i class="fa-solid fa-user text-sm shrink-0 w-5 text-center"></i>
                         <span>ABOUT US</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#services" @click="sidebarOpen = false" class="sidebar-link flex items-center gap-3.5 px-6 py-2.5 text-xs font-bold tracking-wider text-gray-700 border-l-4 border-transparent hover:bg-orange-50 hover:text-[#F5811F] transition-all">
+                    <a href="#services" @click="sidebarOpen = false" class="sidebar-link flex items-center gap-3.5 px-6 py-2.5 text-sm font-bold tracking-wider text-gray-700 border-l-4 border-transparent hover:bg-orange-50 hover:text-[#F5811F] transition-all">
                         <i class="fa-solid fa-city text-sm shrink-0 w-5 text-center"></i>
                         <span>SERVICES</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#projects" @click="sidebarOpen = false" class="sidebar-link flex items-center gap-3.5 px-6 py-2.5 text-xs font-bold tracking-wider text-gray-700 border-l-4 border-transparent hover:bg-orange-50 hover:text-[#F5811F] transition-all">
+                    <a href="#projects" @click="sidebarOpen = false" class="sidebar-link flex items-center gap-3.5 px-6 py-2.5 text-sm font-bold tracking-wider text-gray-700 border-l-4 border-transparent hover:bg-orange-50 hover:text-[#F5811F] transition-all">
                         <i class="fa-solid fa-helmet-safety text-sm shrink-0 w-5 text-center"></i>
                         <span>PROJECTS</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#supply" @click="sidebarOpen = false" class="sidebar-link flex items-center gap-3.5 px-6 py-2.5 text-xs font-bold tracking-wider text-gray-700 border-l-4 border-transparent hover:bg-orange-50 hover:text-[#F5811F] transition-all">
+                    <a href="#supply" @click="sidebarOpen = false" class="sidebar-link flex items-center gap-3.5 px-6 py-2.5 text-sm font-bold tracking-wider text-gray-700 border-l-4 border-transparent hover:bg-orange-50 hover:text-[#F5811F] transition-all">
                         <i class="fa-solid fa-truck-fast text-sm shrink-0 w-5 text-center"></i>
                         <span>OUR SUPPLY</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#gallery" @click="sidebarOpen = false" class="sidebar-link flex items-center gap-3.5 px-6 py-2.5 text-xs font-bold tracking-wider text-gray-700 border-l-4 border-transparent hover:bg-orange-50 hover:text-[#F5811F] transition-all">
+                    <a href="#gallery" @click="sidebarOpen = false" class="sidebar-link flex items-center gap-3.5 px-6 py-2.5 text-sm font-bold tracking-wider text-gray-700 border-l-4 border-transparent hover:bg-orange-50 hover:text-[#F5811F] transition-all">
                         <i class="fa-solid fa-image text-sm shrink-0 w-5 text-center"></i>
                         <span>GALLERY</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#contact" @click="sidebarOpen = false" class="sidebar-link flex items-center gap-3.5 px-6 py-2.5 text-xs font-bold tracking-wider text-gray-700 border-l-4 border-transparent hover:bg-orange-50 hover:text-[#F5811F] transition-all">
+                    <a href="#contact" @click="sidebarOpen = false" class="sidebar-link flex items-center gap-3.5 px-6 py-2.5 text-sm font-bold tracking-wider text-gray-700 border-l-4 border-transparent hover:bg-orange-50 hover:text-[#F5811F] transition-all">
                         <i class="fa-solid fa-envelope text-sm shrink-0 w-5 text-center"></i>
                         <span>CONTACT US</span>
                     </a>
@@ -105,7 +151,22 @@
             </ul>
         </nav>
 
-
+        <!-- Contact Details (shown in sidebar for mobile/tablet) -->
+        <div class="lg:hidden border-t border-gray-100 px-6 py-4 space-y-3">
+            <p class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Contact Details</p>
+            <a href="tel:9851051625" class="flex items-center gap-3 text-sm font-semibold text-[#0B2A4A] hover:text-[#F5811F] transition-colors">
+                <span class="flex items-center justify-center w-8 h-8 rounded-full bg-orange-50 shrink-0">
+                    <i class="fa-solid fa-phone text-[#F5811F] text-xs"></i>
+                </span>
+                <span>9851051625</span>
+            </a>
+            <a href="mailto:ccskathmandu123@gmail.com" class="flex items-center gap-3 text-sm font-semibold text-[#0B2A4A] hover:text-[#F5811F] transition-colors">
+                <span class="flex items-center justify-center w-8 h-8 rounded-full bg-orange-50 shrink-0">
+                    <i class="fa-solid fa-envelope text-[#F5811F] text-xs"></i>
+                </span>
+                <span class="truncate">ccskathmandu123@gmail.com</span>
+            </a>
+        </div>
 
         <!-- Bottom banner -->
         <div class="bg-[#0B2A4A] px-6 py-8 flex flex-col justify-center">
@@ -118,35 +179,35 @@
     <div x-show="sidebarOpen" x-cloak @click="sidebarOpen = false" class="lg:hidden fixed inset-0 bg-black/40 z-40"></div>
 
     <!-- MAIN CONTENT -->
-    <div class="lg:ml-72 pt-16 lg:pt-0">
+    <div class="lg:ml-72 pt-16 sm:pt-24 lg:pt-0">
 
-        <!-- UTILITY BAR (top of content column, desktop only) -->
+        <!-- DESKTOP UTILITY BAR (shown only on lg) -->
         <div class="hidden lg:flex sticky top-0 z-40 items-center justify-between bg-[#0B2A4A] text-white text-sm px-8 py-2.5 shadow-md">
             <!-- Left: Contact Info -->
-            <div class="flex items-center gap-4 text-white/90 font-medium text-xs sm:text-sm">
-                <a href="tel:9851051625" class="flex items-center gap-2 hover:text-[#F5811F] transition">
+            <div class="flex items-center gap-4 font-semibold">
+                <a href="tel:9851051625" class="flex items-center gap-2 text-white hover:text-[#F5811F] transition">
                     <i class="fa-solid fa-phone text-[#F5811F]"></i>
                     <span>9851051625</span>
                 </a>
-                <span class="text-white/30 font-light px-1">|</span>
-                <a href="mailto:ccskathmandu123@gmail.com" class="flex items-center gap-2 hover:text-[#F5811F] transition">
+                <span class="text-white/20 font-light px-0.5">|</span>
+                <a href="mailto:ccskathmandu123@gmail.com" class="flex items-center gap-2 text-white hover:text-[#F5811F] transition">
                     <i class="fa-solid fa-envelope text-[#F5811F]"></i>
                     <span>ccskathmandu123@gmail.com</span>
                 </a>
             </div>
 
             <!-- Right: Nepali Date & Time -->
-            <div class="flex items-center gap-4 text-white/90 font-medium text-xs sm:text-sm">
+            <div class="flex items-center gap-4 text-gray-300 font-normal">
                 <!-- Nepali Date -->
                 <div class="flex items-center gap-2">
-                    <i class="fa-regular fa-calendar-days text-[#F5811F]"></i>
-                    <span id="nepali-date-text">Ashad 21, Tuesday</span>
+                    <i class="fa-regular fa-calendar-days text-[#F5811F]/80"></i>
+                    <span class="nepali-date-text">Ashad 21, Tuesday</span>
                 </div>
-                <span class="text-white/30 font-light px-1">|</span>
+                <span class="text-white/20 font-light px-0.5">|</span>
                 <!-- Nepali Time -->
                 <div class="flex items-center gap-2">
-                    <i class="fa-regular fa-clock text-[#F5811F]"></i>
-                    <span id="nepali-time-text">--:--:-- --</span>
+                    <i class="fa-regular fa-clock text-[#F5811F]/80"></i>
+                    <span class="nepali-time-text">--:--:-- --</span>
                 </div>
             </div>
         </div>
