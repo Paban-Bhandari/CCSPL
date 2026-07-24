@@ -21,37 +21,10 @@
     <!-- Tailwind CSS (built) -->
     <link rel="stylesheet" href="css/output.css">
 
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
 
-        body {
-            overflow-x: hidden;
-        }
-
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-        }
-
-        img {
-            display: block;
-            max-width: 100%;
-            height: auto;
-        }
-
-        .sidebar-link.active {
-            color: #F5811F;
-            background: rgba(245, 129, 31, 0.08);
-            border-left-color: #F5811F !important;
-        }
-    </style>
 
     <!-- Alpine.js -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script type="module" src="js/main.js"></script>
 </head>
 
 <body class="bg-gray-50 text-[#0B2A4A] font-[Inter]" x-data="{ sidebarOpen: false }">
@@ -75,53 +48,56 @@
         class="fixed top-0 left-0 z-50 h-screen w-72 bg-white border-r border-gray-200 flex flex-col transition-transform duration-300 lg:translate-x-0">
 
         <!-- Logo -->
-        <div class="px-4 py-6 border-b border-gray-100 flex justify-center items-center">
+        <div class="px-4 pt-6 pb-3 border-b border-gray-100 flex flex-col items-center">
             <a href="#home" class="w-full flex justify-center items-center">
                 <img src="assets/CCSPL LOGO.png" alt="Chandrajyoti Construction Logo" class="h-20 sm:h-22 w-auto max-w-full object-contain transition-transform duration-300 hover:scale-105">
             </a>
+            <p class="w-full text-right text-[10px] sm:text-xs font-semibold text-[#0B2A4A] tracking-wider mt-1.5 pr-2">
+                Reg. No: <span class="font-extrabold text-[#F5811F]">140208</span>
+            </p>
         </div>
 
         <!-- Nav links -->
-        <nav class="flex-1 overflow-y-auto py-6">
-            <ul class="flex flex-col gap-1">
+        <nav class="flex-1 overflow-y-auto py-4">
+            <ul class="flex flex-col divide-y divide-gray-100">
                 <li>
-                    <a href="#home" class="sidebar-link active flex items-center gap-3.5 px-6 py-3.5 text-xs font-bold tracking-wider text-[#0B2A4A] border-l-4 border-transparent hover:bg-orange-50 hover:text-[#F5811F] transition-all">
+                    <a href="#home" @click="sidebarOpen = false" class="sidebar-link active flex items-center gap-3.5 px-6 py-2.5 text-xs font-bold tracking-wider text-[#0B2A4A] border-l-4 border-transparent hover:bg-orange-50 hover:text-[#F5811F] transition-all">
                         <i class="fa-solid fa-house text-sm shrink-0 w-5 text-center"></i>
                         <span>HOME</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#about" class="sidebar-link flex items-center gap-3.5 px-6 py-3.5 text-xs font-bold tracking-wider text-gray-700 border-l-4 border-transparent hover:bg-orange-50 hover:text-[#F5811F] transition-all">
+                    <a href="#about" @click="sidebarOpen = false" class="sidebar-link flex items-center gap-3.5 px-6 py-2.5 text-xs font-bold tracking-wider text-gray-700 border-l-4 border-transparent hover:bg-orange-50 hover:text-[#F5811F] transition-all">
                         <i class="fa-solid fa-user text-sm shrink-0 w-5 text-center"></i>
                         <span>ABOUT US</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#services" class="sidebar-link flex items-center gap-3.5 px-6 py-3.5 text-xs font-bold tracking-wider text-gray-700 border-l-4 border-transparent hover:bg-orange-50 hover:text-[#F5811F] transition-all">
+                    <a href="#services" @click="sidebarOpen = false" class="sidebar-link flex items-center gap-3.5 px-6 py-2.5 text-xs font-bold tracking-wider text-gray-700 border-l-4 border-transparent hover:bg-orange-50 hover:text-[#F5811F] transition-all">
                         <i class="fa-solid fa-city text-sm shrink-0 w-5 text-center"></i>
                         <span>SERVICES</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#projects" class="sidebar-link flex items-center gap-3.5 px-6 py-3.5 text-xs font-bold tracking-wider text-gray-700 border-l-4 border-transparent hover:bg-orange-50 hover:text-[#F5811F] transition-all">
+                    <a href="#projects" @click="sidebarOpen = false" class="sidebar-link flex items-center gap-3.5 px-6 py-2.5 text-xs font-bold tracking-wider text-gray-700 border-l-4 border-transparent hover:bg-orange-50 hover:text-[#F5811F] transition-all">
                         <i class="fa-solid fa-helmet-safety text-sm shrink-0 w-5 text-center"></i>
                         <span>PROJECTS</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#supply" class="sidebar-link flex items-center gap-3.5 px-6 py-3.5 text-xs font-bold tracking-wider text-gray-700 border-l-4 border-transparent hover:bg-orange-50 hover:text-[#F5811F] transition-all">
+                    <a href="#supply" @click="sidebarOpen = false" class="sidebar-link flex items-center gap-3.5 px-6 py-2.5 text-xs font-bold tracking-wider text-gray-700 border-l-4 border-transparent hover:bg-orange-50 hover:text-[#F5811F] transition-all">
                         <i class="fa-solid fa-truck-fast text-sm shrink-0 w-5 text-center"></i>
                         <span>OUR SUPPLY</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#gallery" class="sidebar-link flex items-center gap-3.5 px-6 py-3.5 text-xs font-bold tracking-wider text-gray-700 border-l-4 border-transparent hover:bg-orange-50 hover:text-[#F5811F] transition-all">
+                    <a href="#gallery" @click="sidebarOpen = false" class="sidebar-link flex items-center gap-3.5 px-6 py-2.5 text-xs font-bold tracking-wider text-gray-700 border-l-4 border-transparent hover:bg-orange-50 hover:text-[#F5811F] transition-all">
                         <i class="fa-solid fa-image text-sm shrink-0 w-5 text-center"></i>
                         <span>GALLERY</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#contact" class="sidebar-link flex items-center gap-3.5 px-6 py-3.5 text-xs font-bold tracking-wider text-gray-700 border-l-4 border-transparent hover:bg-orange-50 hover:text-[#F5811F] transition-all">
+                    <a href="#contact" @click="sidebarOpen = false" class="sidebar-link flex items-center gap-3.5 px-6 py-2.5 text-xs font-bold tracking-wider text-gray-700 border-l-4 border-transparent hover:bg-orange-50 hover:text-[#F5811F] transition-all">
                         <i class="fa-solid fa-envelope text-sm shrink-0 w-5 text-center"></i>
                         <span>CONTACT US</span>
                     </a>
@@ -197,7 +173,7 @@
                         DREAMS <span class="text-[#F5811F]">TOGETHER</span>
                     </h1>
                     <p class="mt-5 text-gray-700 text-base sm:text-lg leading-relaxed font-normal">
-                        Chandrajyoti Construction and Suppliers Pvt. Ltd. is a leading construction company dedicated to delivering quality, safety, and value in every project.
+                        <strong class="font-bold text-[#0B2A4A]">Chandrajyoti Construction and Suppliers Pvt. Ltd.</strong> is a leading construction company dedicated to delivering quality, safety, and value in every project.
                     </p>
                     <div class="mt-4 flex flex-wrap items-center gap-4">
                         <a href="#services" class="inline-flex items-center justify-center gap-2 rounded-lg bg-[#F5811F] px-6 py-3.5 text-sm font-bold text-white shadow-md shadow-orange-500/20 hover:bg-orange-600 hover:-translate-y-0.5 transition-all">
@@ -219,9 +195,9 @@
 
                     <!-- Stat 1 -->
                     <div class="flex items-center gap-4 flex-1 justify-center">
-                        <i class="fa-solid fa-building text-[#0B2A4A] text-3xl shrink-0"></i>
+                        <i class="fa-solid fa-building text-[#0B2A4A] text-2xl shrink-0"></i>
                         <div>
-                            <p class="font-[Montserrat] text-2xl sm:text-3xl font-extrabold text-[#F5811F] leading-tight">150+</p>
+                            <p class="font-[Montserrat] text-2xl sm:text-3xl font-extrabold text-[#F5811F] leading-tight">50+</p>
                             <p class="text-xs sm:text-sm text-gray-500 font-medium">Completed Projects</p>
                         </div>
                     </div>
@@ -231,9 +207,9 @@
 
                     <!-- Stat 2 -->
                     <div class="flex items-center gap-4 flex-1 justify-center">
-                        <i class="fa-solid fa-users text-[#0B2A4A] text-3xl shrink-0"></i>
+                        <i class="fa-solid fa-users text-[#0B2A4A] text-2xl shrink-0"></i>
                         <div>
-                            <p class="font-[Montserrat] text-2xl sm:text-3xl font-extrabold text-[#F5811F] leading-tight">20+</p>
+                            <p class="font-[Montserrat] text-2xl sm:text-3xl font-extrabold text-[#F5811F] leading-tight">11+</p>
                             <p class="text-xs sm:text-sm text-gray-500 font-medium">Years Experience</p>
                         </div>
                     </div>
@@ -243,9 +219,9 @@
 
                     <!-- Stat 3 -->
                     <div class="flex items-center gap-4 flex-1 justify-center">
-                        <i class="fa-solid fa-helmet-safety text-[#0B2A4A] text-3xl shrink-0"></i>
+                        <i class="fa-solid fa-helmet-safety text-[#0B2A4A] text-2xl shrink-0"></i>
                         <div>
-                            <p class="font-[Montserrat] text-2xl sm:text-3xl font-extrabold text-[#F5811F] leading-tight">200+</p>
+                            <p class="font-[Montserrat] text-2xl sm:text-3xl font-extrabold text-[#F5811F] leading-tight">30+</p>
                             <p class="text-xs sm:text-sm text-gray-500 font-medium">Skilled Professionals</p>
                         </div>
                     </div>
@@ -255,7 +231,7 @@
 
                     <!-- Stat 4 -->
                     <div class="flex items-center gap-4 flex-1 justify-center">
-                        <i class="fa-solid fa-award text-[#0B2A4A] text-3xl shrink-0"></i>
+                        <i class="fa-solid fa-award text-[#0B2A4A] text-2xl shrink-0"></i>
                         <div>
                             <p class="font-[Montserrat] text-2xl sm:text-3xl font-extrabold text-[#F5811F] leading-tight">98%</p>
                             <p class="text-xs sm:text-sm text-gray-500 font-medium">Client Satisfaction</p>
@@ -340,77 +316,8 @@
 
     </div>
 
-    <!-- Nepali Date & Time Script -->
-    <script>
-        (function () {
-            const bsData = {
-                2080: [31, 32, 31, 32, 31, 30, 30, 30, 29, 29, 30, 30],
-                2081: [31, 32, 31, 32, 31, 30, 30, 30, 29, 30, 29, 31],
-                2082: [31, 31, 32, 31, 31, 31, 30, 29, 30, 29, 30, 30],
-                2083: [31, 31, 32, 31, 31, 31, 30, 29, 30, 29, 30, 30],
-                2084: [31, 32, 31, 32, 31, 30, 30, 30, 29, 29, 30, 31],
-                2085: [30, 32, 31, 32, 31, 30, 30, 30, 29, 30, 29, 31]
-            };
-
-            function getNepaliDate(adDate) {
-                const refAd = new Date(2023, 3, 14); // 2023-04-14 = 2080 Baisakh 1
-                const target = new Date(adDate.getFullYear(), adDate.getMonth(), adDate.getDate());
-                let diffDays = Math.round((target - refAd) / (1000 * 60 * 60 * 24));
-                let bsYear = 2080;
-                let bsMonth = 0;
-
-                if (diffDays >= 0) {
-                    while (diffDays >= 0) {
-                        const daysInMonth = (bsData[bsYear] && bsData[bsYear][bsMonth]) || 30;
-                        if (diffDays < daysInMonth) break;
-                        diffDays -= daysInMonth;
-                        bsMonth++;
-                        if (bsMonth >= 12) { bsMonth = 0; bsYear++; }
-                    }
-                } else {
-                    while (diffDays < 0) {
-                        bsMonth--;
-                        if (bsMonth < 0) { bsMonth = 11; bsYear--; }
-                        const daysInMonth = (bsData[bsYear] && bsData[bsYear][bsMonth]) || 30;
-                        diffDays += daysInMonth;
-                    }
-                }
-
-                const bsDay = diffDays + 1;
-                const months = ['Baisakh', 'Jestha', 'Ashad', 'Shrawan', 'Bhadra', 'Ashwin', 'Kartik', 'Mangsir', 'Poush', 'Magh', 'Falgun', 'Chaitra'];
-                const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-                return `${months[bsMonth]} ${bsDay}, ${days[adDate.getDay()]}`;
-            }
-
-            function updateNepaliDateTime() {
-                const now = new Date();
-                
-                // Update Date
-                const dateEl = document.getElementById('nepali-date-text');
-                if (dateEl) {
-                    dateEl.textContent = getNepaliDate(now);
-                }
-
-                // Update Live Nepal Time
-                const timeEl = document.getElementById('nepali-time-text');
-                if (timeEl) {
-                    timeEl.textContent = now.toLocaleTimeString('en-US', {
-                        timeZone: 'Asia/Kathmandu',
-                        hour: 'numeric',
-                        minute: '2-digit',
-                        second: '2-digit',
-                        hour12: true
-                    });
-                }
-            }
-
-            updateNepaliDateTime();
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', updateNepaliDateTime);
-            }
-            setInterval(updateNepaliDateTime, 1000);
-        })();
-    </script>
+    <!-- Scripts -->
+    <script src="js/main.js" defer></script>
 
 </body>
 </html>

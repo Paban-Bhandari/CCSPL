@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ============================================================
+   Base / Global Styles (moved from index.html inline <style>)
+   ============================================================ */
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* ============================================================
+   Component Styles
+   ============================================================ */
+@layer components {
+    .sidebar-link.active {
+        color: #F5811F;
+        background: rgba(245, 129, 31, 0.08);
+        border-left-color: #F5811F !important;
+    }
+}
