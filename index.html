@@ -7,7 +7,10 @@
     <title>Chandrajyoti Construction & Suppliers Pvt. Ltd.</title>
     <meta name="description"
         content="Chandrajyoti Construction and Suppliers Pvt. Ltd. — building construction, road construction, government contracts, and material supply based in Chitwan, Nepal.">
-    <link rel="icon" type="image/png" href="assets/CCSPL LOGO.png">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -141,28 +144,34 @@
     <!-- MAIN CONTENT -->
     <div class="lg:ml-72 pt-16 lg:pt-0">
 
-        <!-- UTILITY BAR (top of content column, desktop only — mobile already has its own top bar) -->
+        <!-- UTILITY BAR (top of content column, desktop only) -->
         <div class="hidden lg:flex sticky top-0 z-40 items-center justify-between bg-[#0B2A4A] text-white text-sm px-8 py-2.5 shadow-md">
-            <div class="flex items-center gap-6">
-                <a href="tel:+9779851234567" class="flex items-center gap-2 hover:text-[#F5811F] transition">
-                    <i class="fa-solid fa-phone text-xs"></i>
-                    +977 9851234567
+            <!-- Left: Contact Info -->
+            <div class="flex items-center gap-4 text-white/90 font-medium text-xs sm:text-sm">
+                <a href="tel:9851051625" class="flex items-center gap-2 hover:text-[#F5811F] transition">
+                    <i class="fa-solid fa-phone text-[#F5811F]"></i>
+                    <span>9851051625</span>
                 </a>
-                <a href="mailto:info@chandrajyoti.com.np" class="flex items-center gap-2 hover:text-[#F5811F] transition">
-                    <i class="fa-solid fa-envelope text-xs"></i>
-                    info@chandrajyoti.com.np
+                <span class="text-white/30 font-light px-1">|</span>
+                <a href="mailto:ccskathmandu123@gmail.com" class="flex items-center gap-2 hover:text-[#F5811F] transition">
+                    <i class="fa-solid fa-envelope text-[#F5811F]"></i>
+                    <span>ccskathmandu123@gmail.com</span>
                 </a>
             </div>
-            <div class="flex items-center gap-3">
-                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="hover:text-[#F5811F] transition">
-                    <i class="fa-brands fa-facebook-f text-sm"></i>
-                </a>
-                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="hover:text-[#F5811F] transition">
-                    <i class="fa-brands fa-instagram text-sm"></i>
-                </a>
-                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="hover:text-[#F5811F] transition">
-                    <i class="fa-brands fa-linkedin-in text-sm"></i>
-                </a>
+
+            <!-- Right: Nepali Date & Time -->
+            <div class="flex items-center gap-4 text-white/90 font-medium text-xs sm:text-sm">
+                <!-- Nepali Date -->
+                <div class="flex items-center gap-2">
+                    <i class="fa-regular fa-calendar-days text-[#F5811F]"></i>
+                    <span id="nepali-date-text">Ashad 21, Tuesday</span>
+                </div>
+                <span class="text-white/30 font-light px-1">|</span>
+                <!-- Nepali Time -->
+                <div class="flex items-center gap-2">
+                    <i class="fa-regular fa-clock text-[#F5811F]"></i>
+                    <span id="nepali-time-text">--:--:-- --</span>
+                </div>
             </div>
         </div>
 
@@ -330,6 +339,78 @@
         </footer>
 
     </div>
+
+    <!-- Nepali Date & Time Script -->
+    <script>
+        (function () {
+            const bsData = {
+                2080: [31, 32, 31, 32, 31, 30, 30, 30, 29, 29, 30, 30],
+                2081: [31, 32, 31, 32, 31, 30, 30, 30, 29, 30, 29, 31],
+                2082: [31, 31, 32, 31, 31, 31, 30, 29, 30, 29, 30, 30],
+                2083: [31, 31, 32, 31, 31, 31, 30, 29, 30, 29, 30, 30],
+                2084: [31, 32, 31, 32, 31, 30, 30, 30, 29, 29, 30, 31],
+                2085: [30, 32, 31, 32, 31, 30, 30, 30, 29, 30, 29, 31]
+            };
+
+            function getNepaliDate(adDate) {
+                const refAd = new Date(2023, 3, 14); // 2023-04-14 = 2080 Baisakh 1
+                const target = new Date(adDate.getFullYear(), adDate.getMonth(), adDate.getDate());
+                let diffDays = Math.round((target - refAd) / (1000 * 60 * 60 * 24));
+                let bsYear = 2080;
+                let bsMonth = 0;
+
+                if (diffDays >= 0) {
+                    while (diffDays >= 0) {
+                        const daysInMonth = (bsData[bsYear] && bsData[bsYear][bsMonth]) || 30;
+                        if (diffDays < daysInMonth) break;
+                        diffDays -= daysInMonth;
+                        bsMonth++;
+                        if (bsMonth >= 12) { bsMonth = 0; bsYear++; }
+                    }
+                } else {
+                    while (diffDays < 0) {
+                        bsMonth--;
+                        if (bsMonth < 0) { bsMonth = 11; bsYear--; }
+                        const daysInMonth = (bsData[bsYear] && bsData[bsYear][bsMonth]) || 30;
+                        diffDays += daysInMonth;
+                    }
+                }
+
+                const bsDay = diffDays + 1;
+                const months = ['Baisakh', 'Jestha', 'Ashad', 'Shrawan', 'Bhadra', 'Ashwin', 'Kartik', 'Mangsir', 'Poush', 'Magh', 'Falgun', 'Chaitra'];
+                const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                return `${months[bsMonth]} ${bsDay}, ${days[adDate.getDay()]}`;
+            }
+
+            function updateNepaliDateTime() {
+                const now = new Date();
+                
+                // Update Date
+                const dateEl = document.getElementById('nepali-date-text');
+                if (dateEl) {
+                    dateEl.textContent = getNepaliDate(now);
+                }
+
+                // Update Live Nepal Time
+                const timeEl = document.getElementById('nepali-time-text');
+                if (timeEl) {
+                    timeEl.textContent = now.toLocaleTimeString('en-US', {
+                        timeZone: 'Asia/Kathmandu',
+                        hour: 'numeric',
+                        minute: '2-digit',
+                        second: '2-digit',
+                        hour12: true
+                    });
+                }
+            }
+
+            updateNepaliDateTime();
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', updateNepaliDateTime);
+            }
+            setInterval(updateNepaliDateTime, 1000);
+        })();
+    </script>
 
 </body>
 </html>
