@@ -320,32 +320,47 @@
                     </h2>
                 </div>
 
-                <!-- Parallel Content Grid: Left Image + Right Paragraph Content -->
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                <!-- Parallel Content Grid: Left Image + Right Content -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
-                    <!-- Image Column (Desktop: Left 6/12) -->
-                    <div class="lg:col-span-6 relative group">
+                    <!-- LEFT COLUMN: Construction Image + Chairperson Photo -->
+                    <div class="lg:col-span-5 flex flex-col gap-6">
 
-                        <!-- Main Image Container -->
+                        <!-- Main Construction Image -->
                         <div class="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl shadow-slate-900/10 border border-gray-100 bg-gray-100">
-                            <img src="assets/construction site1.jpg" alt="Chandrajyoti Construction - About Us" loading="lazy" class="w-full h-[350px] sm:h-[420px] lg:h-[460px] object-cover object-center transform group-hover:scale-105 transition-transform duration-700 ease-out">
-                            
-                            <!-- Floating License Badge Overlay -->
-                            <div class="absolute bottom-5 right-5 sm:bottom-6 sm:right-6 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-xl border border-white/60 flex items-center gap-3.5 transform group-hover:translate-y-[-2px] transition-transform duration-300">
-                                <div class="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-[#0B2A4A] to-[#164270] text-[#F5811F] shrink-0 shadow-md">
-                                    <i class="fa-solid fa-shield-halved text-lg"></i>
+                            <img src="assets/construction site1.jpg" alt="Chandrajyoti Construction - About Us" loading="lazy" class="w-full h-[300px] sm:h-[380px] lg:h-[400px] object-cover object-center">
+                        </div>
+
+                        <!-- Chairperson Photo + Quote Card -->
+                        <div class="bg-slate-50 border border-slate-100/80 hover:border-gray-200 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 rounded-2xl px-5 py-5 flex items-center gap-5">
+
+                            <!-- Left: Circular Photo + Name + Designation -->
+                            <div class="flex flex-col items-center shrink-0 text-center">
+                                <div class="w-16 h-16 sm:w-[72px] sm:h-[72px] rounded-full overflow-hidden ring-[4px] ring-[#F5811F] shadow-md">
+                                    <img src="assets/chairperson.jpg" alt="Chairperson Harihar Bhandari" loading="lazy" class="w-full h-full object-cover object-center">
                                 </div>
-                                <div>
-                                    <p class="font-[Montserrat] font-extrabold text-[#0B2A4A] text-xs sm:text-sm leading-tight">Govt. Licensed</p>
-                                    <p class="text-[11px] text-gray-500 font-medium">License No. 3682</p>
-                                </div>
+                                <p class="mt-2 font-[Montserrat] font-bold text-[#0B2A4A] text-xs leading-tight">Harihar Bhandari</p>
+                                <p class="text-[10px] text-[#F5811F] font-semibold mt-0.5">Chairperson</p>
                             </div>
+
+                            <!-- Vertical Divider -->
+                            <div class="w-px self-stretch bg-gray-200 shrink-0"></div>
+
+                            <!-- Right: Quote -->
+                            <div class="flex flex-col justify-center min-w-0">
+
+                                <i class="fa-solid fa-quote-left text-[#F5811F] text-sm mb-1.5 leading-none"></i>
+                                <p class="text-gray-600 text-xs sm:text-sm font-medium leading-relaxed">
+                                    विश्वासलाई आधार, गुणस्तरलाई प्राथमिकता र सेवालाई प्रतिबद्धता बनाएर हामी प्रत्येक परियोजनालाई सफल बनाउँछौं।
+                                </p>
+                            </div>
+
                         </div>
 
                     </div>
 
-                    <!-- Paragraph Content Column (Desktop: Right 6/12) -->
-                    <div class="lg:col-span-6 flex flex-col justify-center">
+                    <!-- RIGHT COLUMN: Paragraphs + 4 Fact Containers -->
+                    <div class="lg:col-span-7 flex flex-col justify-start">
 
                         <!-- Paragraph 1 -->
                         <p class="text-gray-600 text-base sm:text-lg leading-relaxed mb-5 font-normal">
@@ -353,63 +368,63 @@
                         </p>
 
                         <!-- Paragraph 2 -->
-                        <p class="text-gray-600 text-base sm:text-lg leading-relaxed font-normal">
+                        <p class="text-gray-600 text-base sm:text-lg leading-relaxed font-normal mb-8">
                             Specializing in building construction, road networks, bridge engineering, and government contract works, we combine skilled engineering with disciplined project execution. Every project is delivered with an uncompromised commitment to quality craftsmanship, safety compliance, and client satisfaction.
                         </p>
 
+                        <!-- 4 Fact Containers (2x2 grid) -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+
+                            <!-- Fact 1 -->
+                            <div class="flex items-center gap-3.5 p-4 rounded-2xl bg-slate-50 border border-slate-100/80 hover:border-gray-200 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+                                <div class="flex items-center justify-center w-10 h-10 rounded-xl bg-[#F5811F]/10 text-[#F5811F] shrink-0">
+                                    <i class="fa-solid fa-file-contract text-base"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] uppercase font-bold text-gray-400 tracking-wider font-[Montserrat]">Company Reg. No.</p>
+                                    <p class="text-xs sm:text-sm font-extrabold text-[#0B2A4A] leading-tight mt-0.5">140208/072/073</p>
+                                </div>
+                            </div>
+
+                            <!-- Fact 2 -->
+                            <div class="flex items-center gap-3.5 p-4 rounded-2xl bg-slate-50 border border-slate-100/80 hover:border-gray-200 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+                                <div class="flex items-center justify-center w-10 h-10 rounded-xl bg-[#F5811F]/10 text-[#F5811F] shrink-0">
+                                    <i class="fa-solid fa-calendar-days text-base"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] uppercase font-bold text-gray-400 tracking-wider font-[Montserrat]">Incorporated</p>
+                                    <p class="text-xs sm:text-sm font-extrabold text-[#0B2A4A] leading-tight mt-0.5">Est. 2072 B.S. (2015 A.D.)</p>
+                                </div>
+                            </div>
+
+                            <!-- Fact 3 -->
+                            <div class="flex items-center gap-3.5 p-4 rounded-2xl bg-slate-50 border border-slate-100/80 hover:border-gray-200 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+                                <div class="flex items-center justify-center w-10 h-10 rounded-xl bg-[#F5811F]/10 text-[#F5811F] shrink-0">
+                                    <i class="fa-solid fa-award text-base"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] uppercase font-bold text-gray-400 tracking-wider font-[Montserrat]">Government Licensed</p>
+                                    <p class="text-xs sm:text-sm font-extrabold text-[#0B2A4A] leading-tight mt-0.5">License No. 3682</p>
+                                </div>
+                            </div>
+
+                            <!-- Fact 4 -->
+                            <div class="flex items-center gap-3.5 p-4 rounded-2xl bg-slate-50 border border-slate-100/80 hover:border-gray-200 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+                                <div class="flex items-center justify-center w-10 h-10 rounded-xl bg-[#F5811F]/10 text-[#F5811F] shrink-0">
+                                    <i class="fa-solid fa-location-dot text-base"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] uppercase font-bold text-gray-400 tracking-wider font-[Montserrat]">Registered HQ</p>
+                                    <p class="text-xs sm:text-sm font-extrabold text-[#0B2A4A] leading-tight mt-0.5">Kathmandu, Bagmati Province</p>
+                                </div>
+                            </div>
+
+                        </div>
+
                     </div>
 
                 </div>
 
-                <!-- Bottom Row: 4 Verified Fact Containers (Full Width Below Parallel Image & Content) -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-12 pt-8 border-t border-gray-100">
-                    
-                    <!-- Fact 1 -->
-                    <div class="flex items-center gap-3.5 p-4 rounded-2xl bg-slate-50 border border-slate-100/80 hover:border-gray-200 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
-                        <div class="flex items-center justify-center w-10 h-10 rounded-xl bg-[#F5811F]/10 text-[#F5811F] shrink-0">
-                            <i class="fa-solid fa-file-contract text-base"></i>
-                        </div>
-                        <div>
-                            <p class="text-[10px] uppercase font-bold text-gray-400 tracking-wider font-[Montserrat]">Company Reg. No.</p>
-                            <p class="text-xs sm:text-sm font-extrabold text-[#0B2A4A] leading-tight mt-0.5">140208/072/073</p>
-                        </div>
-                    </div>
-
-                    <!-- Fact 2 -->
-                    <div class="flex items-center gap-3.5 p-4 rounded-2xl bg-slate-50 border border-slate-100/80 hover:border-gray-200 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
-                        <div class="flex items-center justify-center w-10 h-10 rounded-xl bg-[#F5811F]/10 text-[#F5811F] shrink-0">
-                            <i class="fa-solid fa-calendar-days text-base"></i>
-                        </div>
-                        <div>
-                            <p class="text-[10px] uppercase font-bold text-gray-400 tracking-wider font-[Montserrat]">Incorporated</p>
-                            <p class="text-xs sm:text-sm font-extrabold text-[#0B2A4A] leading-tight mt-0.5">Est. 2072 B.S. (2015 A.D.)</p>
-                        </div>
-                    </div>
-
-                    <!-- Fact 3 -->
-                    <div class="flex items-center gap-3.5 p-4 rounded-2xl bg-slate-50 border border-slate-100/80 hover:border-gray-200 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
-                        <div class="flex items-center justify-center w-10 h-10 rounded-xl bg-[#F5811F]/10 text-[#F5811F] shrink-0">
-                            <i class="fa-solid fa-award text-base"></i>
-                        </div>
-                        <div>
-                            <p class="text-[10px] uppercase font-bold text-gray-400 tracking-wider font-[Montserrat]">Industry License</p>
-                            <p class="text-xs sm:text-sm font-extrabold text-[#0B2A4A] leading-tight mt-0.5">Licensed Construction Business</p>
-                        </div>
-                    </div>
-
-                    <!-- Fact 4 -->
-                    <div class="flex items-center gap-3.5 p-4 rounded-2xl bg-slate-50 border border-slate-100/80 hover:border-gray-200 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
-                        <div class="flex items-center justify-center w-10 h-10 rounded-xl bg-[#F5811F]/10 text-[#F5811F] shrink-0">
-                            <i class="fa-solid fa-location-dot text-base"></i>
-                        </div>
-                        <div>
-                            <p class="text-[10px] uppercase font-bold text-gray-400 tracking-wider font-[Montserrat]">Registered HQ</p>
-                            <p class="text-xs sm:text-sm font-extrabold text-[#0B2A4A] leading-tight mt-0.5">Kathmandu, Bagmati Province</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
 
         </section>
 
