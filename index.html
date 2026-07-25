@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Chandrajyoti Construction & Suppliers Pvt. Ltd.</title>
     <meta name="description"
-        content="Chandrajyoti Construction and Suppliers Pvt. Ltd. — building construction, road construction, government contracts, and material supply based in Kathmandu, Nepal.">
+        content="Chandrajyoti Construction and Suppliers Pvt. Ltd. — building construction, road construction, bridge construction, and government contracts based in Kathmandu, Nepal.">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/CCSPL LOGO.png">
     <link rel="shortcut icon" type="image/png" href="assets/CCSPL LOGO.png">
@@ -130,12 +130,7 @@
                         <span>PROJECTS</span>
                     </a>
                 </li>
-                <li>
-                    <a href="#supply" @click="sidebarOpen = false" class="sidebar-link flex items-center gap-3.5 px-6 py-2.5 text-sm font-bold tracking-wider text-gray-700 border-l-4 border-transparent hover:bg-orange-50 hover:text-[#F5811F] transition-all">
-                        <i class="fa-solid fa-truck-fast text-sm shrink-0 w-5 text-center"></i>
-                        <span>OUR SUPPLY</span>
-                    </a>
-                </li>
+
                 <li>
                     <a href="#gallery" @click="sidebarOpen = false" class="sidebar-link flex items-center gap-3.5 px-6 py-2.5 text-sm font-bold tracking-wider text-gray-700 border-l-4 border-transparent hover:bg-orange-50 hover:text-[#F5811F] transition-all">
                         <i class="fa-solid fa-image text-sm shrink-0 w-5 text-center"></i>
@@ -304,7 +299,7 @@
         </div>
 
         <!-- ABOUT US SECTION -->
-        <section id="about" class="relative bg-white px-6 py-16 sm:px-10 lg:px-14 lg:py-24 overflow-hidden border-t border-gray-100">
+        <section id="about" class="relative bg-white px-6 pt-16 pb-8 sm:px-10 sm:pt-20 sm:pb-10 lg:px-14 lg:pt-24 lg:pb-12 overflow-hidden border-t border-gray-100">
 
             <div class="relative max-w-6xl mx-auto">
 
@@ -439,62 +434,137 @@
         </section>
 
         <!-- SERVICES -->
-        <section id="services" class="px-6 py-16 sm:px-10 lg:px-14">
+        <section id="services" class="px-6 pt-8 pb-8 sm:px-10 sm:pt-10 sm:pb-10 lg:px-14 lg:pt-12 lg:pb-12 bg-white border-t border-gray-100">
             <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-12">
-                    <p class="text-[#F5811F] font-bold text-sm uppercase tracking-widest mb-2">What We Do</p>
-                    <h2 class="font-[Montserrat] text-3xl sm:text-4xl font-extrabold text-[#0B2A4A]">Our Services</h2>
+
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
+                    <p class="inline-flex items-center justify-center gap-2.5 text-[#F5811F] font-bold text-xs sm:text-sm uppercase tracking-widest mb-3 font-[Montserrat]">
+                        <span class="inline-block w-7 h-[2px] bg-[#F5811F]"></span>
+                        WHAT WE DO
+                        <span class="inline-block w-7 h-[2px] bg-[#F5811F]"></span>
+                    </p>
+                    <h2 class="font-[Montserrat] text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0B2A4A] leading-tight tracking-tight">
+                        OUR <span class="text-[#F5811F]">SERVICES</span>
+                    </h2>
                 </div>
-                <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
-                    <div class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition">
-                        <h3 class="font-[Montserrat] font-bold text-[#0B2A4A] mb-2">Building Construction</h3>
-                        <p class="text-sm text-gray-500">We build durable and strong structures with quality workmanship.</p>
+
+                <!-- 4 Services Grid (2x2 Layout) -->
+                <div class="grid gap-6 grid-cols-1 sm:grid-cols-2">
+
+                    <!-- Service 1: Building Construction -->
+                    <div class="group rounded-2xl bg-[#EAF3FA]/80 border border-[#C4DDF2]/80 p-5 sm:p-6 shadow-sm hover:border-[#F5811F]/40 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-start gap-4">
+                        <div class="flex items-center justify-center w-11 h-11 rounded-xl bg-[#F5811F]/10 text-[#F5811F] text-lg shrink-0">
+                            <i class="fa-solid fa-city"></i>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="font-[Montserrat] font-extrabold text-[#0B2A4A] text-sm sm:text-base mb-1 leading-snug">Building Construction</h3>
+                            <p class="text-xs text-gray-600 leading-relaxed">We build durable and strong structures with quality workmanship.</p>
+                        </div>
                     </div>
-                    <div class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition">
-                        <h3 class="font-[Montserrat] font-bold text-[#0B2A4A] mb-2">Road Construction</h3>
-                        <p class="text-sm text-gray-500">We construct all types of roads and infrastructure with excellence.</p>
+
+                    <!-- Service 2: Road Construction -->
+                    <div class="group rounded-2xl bg-[#EAF3FA]/80 border border-[#C4DDF2]/80 p-5 sm:p-6 shadow-sm hover:border-[#F5811F]/40 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-start gap-4">
+                        <div class="flex items-center justify-center w-11 h-11 rounded-xl bg-[#F5811F]/10 text-[#F5811F] shrink-0 text-lg">
+                            <i class="fa-solid fa-road"></i>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="font-[Montserrat] font-extrabold text-[#0B2A4A] text-sm sm:text-base mb-1 leading-snug">Road Construction</h3>
+                            <p class="text-xs text-gray-600 leading-relaxed">We construct all types of roads and infrastructure with excellence.</p>
+                        </div>
                     </div>
-                    <div class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition">
-                        <h3 class="font-[Montserrat] font-bold text-[#0B2A4A] mb-2">Government Contracts</h3>
-                        <p class="text-sm text-gray-500">We work with government departments on various contract projects.</p>
+
+                    <!-- Service 3: Bridge Construction -->
+                    <div class="group rounded-2xl bg-[#EAF3FA]/80 border border-[#C4DDF2]/80 p-5 sm:p-6 shadow-sm hover:border-[#F5811F]/40 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-start gap-4">
+                        <div class="flex items-center justify-center w-11 h-11 rounded-xl bg-[#F5811F]/10 text-[#F5811F] shrink-0 text-lg">
+                            <i class="fa-solid fa-bridge"></i>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="font-[Montserrat] font-extrabold text-[#0B2A4A] text-sm sm:text-base mb-1 leading-snug">Bridge Construction</h3>
+                            <p class="text-xs text-gray-600 leading-relaxed">We build strong, safe, and durable bridges connecting communities.</p>
+                        </div>
                     </div>
-                    <div class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition">
-                        <h3 class="font-[Montserrat] font-bold text-[#0B2A4A] mb-2">Suppliers & Procurement</h3>
-                        <p class="text-sm text-gray-500">We supply high-quality construction materials on time.</p>
+
+                    <!-- Service 4: Government Contracts -->
+                    <div class="group rounded-2xl bg-[#EAF3FA]/80 border border-[#C4DDF2]/80 p-5 sm:p-6 shadow-sm hover:border-[#F5811F]/40 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-start gap-4">
+                        <div class="flex items-center justify-center w-11 h-11 rounded-xl bg-[#F5811F]/10 text-[#F5811F] shrink-0 text-lg">
+                            <i class="fa-solid fa-file-contract"></i>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="font-[Montserrat] font-extrabold text-[#0B2A4A] text-sm sm:text-base mb-1 leading-snug">Government Contracts</h3>
+                            <p class="text-xs text-gray-600 leading-relaxed">We work with government departments on various contract projects.</p>
+                        </div>
                     </div>
-                    <div class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition">
-                        <h3 class="font-[Montserrat] font-bold text-[#0B2A4A] mb-2">Renovation & Maintenance</h3>
-                        <p class="text-sm text-gray-500">We provide renovation and maintenance for all types of buildings.</p>
-                    </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- PROJECTS (placeholder) -->
-        <section id="projects" class="px-6 py-16 sm:px-10 lg:px-14">
-            <div class="max-w-6xl mx-auto text-center text-gray-400">
-                Projects section — coming next
+        <!-- PROJECTS -->
+        <section id="projects" class="px-6 pt-8 pb-8 sm:px-10 sm:pt-10 sm:pb-10 lg:px-14 lg:pt-12 lg:pb-12 bg-white border-t border-gray-100">
+            <div class="max-w-6xl mx-auto">
+
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
+                    <p class="inline-flex items-center justify-center gap-2.5 text-[#F5811F] font-bold text-xs sm:text-sm uppercase tracking-widest mb-3 font-[Montserrat]">
+                        <span class="inline-block w-7 h-[2px] bg-[#F5811F]"></span>
+                        OUR WORK & PORTFOLIO
+                        <span class="inline-block w-7 h-[2px] bg-[#F5811F]"></span>
+                    </p>
+                    <h2 class="font-[Montserrat] text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0B2A4A] leading-tight tracking-tight">
+                        FEATURED <span class="text-[#F5811F]">PROJECTS</span>
+                    </h2>
+                </div>
+
+                <div class="max-w-6xl mx-auto text-center text-gray-400">
+                    Projects section content — coming next
+                </div>
             </div>
         </section>
 
-        <!-- SUPPLY (placeholder) -->
-        <section id="supply" class="px-6 py-16 sm:px-10 lg:px-14 bg-white">
-            <div class="max-w-6xl mx-auto text-center text-gray-400">
-                Our Supply section — coming next
+
+
+        <!-- GALLERY -->
+        <section id="gallery" class="px-6 pt-8 pb-8 sm:px-10 sm:pt-10 sm:pb-10 lg:px-14 lg:pt-12 lg:pb-12 bg-white border-t border-gray-100">
+            <div class="max-w-6xl mx-auto">
+
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
+                    <p class="inline-flex items-center justify-center gap-2.5 text-[#F5811F] font-bold text-xs sm:text-sm uppercase tracking-widest mb-3 font-[Montserrat]">
+                        <span class="inline-block w-7 h-[2px] bg-[#F5811F]"></span>
+                        PROJECT GALLERY & PHOTOS
+                        <span class="inline-block w-7 h-[2px] bg-[#F5811F]"></span>
+                    </p>
+                    <h2 class="font-[Montserrat] text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0B2A4A] leading-tight tracking-tight">
+                        OUR <span class="text-[#F5811F]">GALLERY</span>
+                    </h2>
+                </div>
+
+                <div class="max-w-6xl mx-auto text-center text-gray-400">
+                    Gallery section content — coming next
+                </div>
             </div>
         </section>
 
-        <!-- GALLERY (placeholder) -->
-        <section id="gallery" class="px-6 py-16 sm:px-10 lg:px-14">
-            <div class="max-w-6xl mx-auto text-center text-gray-400">
-                Gallery section — coming next
-            </div>
-        </section>
+        <!-- CONTACT -->
+        <section id="contact" class="px-6 pt-8 pb-16 sm:px-10 sm:pt-10 sm:pb-20 lg:px-14 lg:pt-12 lg:pb-24 bg-white border-t border-gray-100">
+            <div class="max-w-6xl mx-auto">
 
-        <!-- CONTACT (placeholder) -->
-        <section id="contact" class="px-6 py-16 sm:px-10 lg:px-14 bg-white">
-            <div class="max-w-6xl mx-auto text-center text-gray-400">
-                Contact Us section — coming next
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
+                    <p class="inline-flex items-center justify-center gap-2.5 text-[#F5811F] font-bold text-xs sm:text-sm uppercase tracking-widest mb-3 font-[Montserrat]">
+                        <span class="inline-block w-7 h-[2px] bg-[#F5811F]"></span>
+                        GET IN TOUCH WITH US
+                        <span class="inline-block w-7 h-[2px] bg-[#F5811F]"></span>
+                    </p>
+                    <h2 class="font-[Montserrat] text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0B2A4A] leading-tight tracking-tight">
+                        CONTACT <span class="text-[#F5811F]">US</span>
+                    </h2>
+                </div>
+
+                <div class="max-w-6xl mx-auto text-center text-gray-400">
+                    Contact Us section content — coming next
+                </div>
             </div>
         </section>
 
