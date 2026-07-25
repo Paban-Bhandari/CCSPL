@@ -1115,6 +1115,11 @@ img {
      object-position: center;
 }
 
+.object-right {
+  -o-object-position: right;
+     object-position: right;
+}
+
 .p-2 {
   padding: 0.5rem;
 }
