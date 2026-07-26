@@ -731,7 +731,7 @@
                             </div>
 
                             <!-- Submit Button -->
-                            <div class="pt-2">
+                            <div class="pt-2 flex justify-center">
                                 <button type="submit" :disabled="submitting"
                                     class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-xl bg-[#F5811F] px-8 py-3.5 text-sm font-bold text-white shadow-md shadow-orange-500/25 hover:bg-orange-600 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 disabled:opacity-70 font-[Montserrat]">
                                     <template x-if="!submitting">
@@ -785,6 +785,18 @@
                             </div>
                         </div>
 
+                        <!-- Email Address Card -->
+                        <a href="mailto:bhandaripawan841@gmail.com" class="rounded-2xl bg-[#EAF3FA]/80 border border-[#C4DDF2]/80 p-4 sm:p-5 shadow-sm hover:border-[#F5811F]/40 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-center gap-4">
+                            <div class="flex items-center justify-center w-11 h-11 rounded-xl bg-[#F5811F]/10 text-[#F5811F] text-lg shrink-0">
+                                <i class="fa-solid fa-envelope-open-text"></i>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h3 class="font-[Montserrat] font-bold text-[#0B2A4A] text-base mb-0.5">Email Address</h3>
+                                <p class="text-sm text-[#F5811F] font-bold leading-snug truncate">bhandaripawan841@gmail.com</p>
+                                <p class="text-xs text-gray-500 mt-0.5">Response guaranteed within 1-2 business days</p>
+                            </div>
+                        </a>
+
                         <!-- Phone Line Card -->
                         <a href="tel:01-5910818" class="rounded-2xl bg-[#EAF3FA]/80 border border-[#C4DDF2]/80 p-4 sm:p-5 shadow-sm hover:border-[#F5811F]/40 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-center gap-4">
                             <div class="flex items-center justify-center w-11 h-11 rounded-xl bg-[#F5811F]/10 text-[#F5811F] text-lg shrink-0">
@@ -797,17 +809,10 @@
                             </div>
                         </a>
 
-                        <!-- Email Address Card -->
-                        <a href="mailto:bhandaripawan841@gmail.com" class="rounded-2xl bg-[#EAF3FA]/80 border border-[#C4DDF2]/80 p-4 sm:p-5 shadow-sm hover:border-[#F5811F]/40 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-center gap-4">
-                            <div class="flex items-center justify-center w-11 h-11 rounded-xl bg-[#F5811F]/10 text-[#F5811F] text-lg shrink-0">
-                                <i class="fa-solid fa-envelope-open-text"></i>
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <h3 class="font-[Montserrat] font-bold text-[#0B2A4A] text-base mb-0.5">Email Address</h3>
-                                <p class="text-sm text-[#F5811F] font-bold leading-snug truncate">bhandaripawan841@gmail.com</p>
-                                <p class="text-xs text-gray-500 mt-0.5">Response guaranteed within 1-2 business days</p>
-                            </div>
-                        </a>
+                        <!-- Emergency Contact Info -->
+                        <p class="-mt-3 px-1 text-xs text-gray-500">
+                            In case of emergency contact: <a href="tel:9851051625" class="font-semibold text-[#0B2A4A] hover:text-[#F5811F] transition-colors">9851051625 (Chairperson)</a>
+                        </p>
 
                     </div>
 

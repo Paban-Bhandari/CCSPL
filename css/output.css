@@ -662,6 +662,10 @@ img {
   margin-top: -3rem;
 }
 
+.-mt-3 {
+  margin-top: -0.75rem;
+}
+
 .mb-0\.5 {
   margin-bottom: 0.125rem;
 }
@@ -1287,6 +1291,11 @@ img {
 .px-0\.5 {
   padding-left: 0.125rem;
   padding-right: 0.125rem;
+}
+
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
 }
 
 .px-2\.5 {
