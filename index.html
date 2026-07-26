@@ -40,9 +40,9 @@
                     <span>01-5910818</span>
                 </a>
                 <span class="text-white/20 font-light">|</span>
-                <a href="mailto:bhandaripawan841@gmail.com" class="flex items-center gap-1.5 text-white hover:text-[#F5811F] transition">
+                <a href="mailto:contact@ccspl.com.np" class="flex items-center gap-1.5 text-white hover:text-[#F5811F] transition">
                     <i class="fa-solid fa-envelope text-[#F5811F]"></i>
-                    <span>bhandaripawan841@gmail.com</span>
+                    <span>contact@ccspl.com.np</span>
                 </a>
             </div>
 
@@ -149,11 +149,11 @@
                 </span>
                 <span>01-5910818</span>
             </a>
-            <a href="mailto:bhandaripawan841@gmail.com" class="flex items-center gap-3 text-sm font-semibold text-[#0B2A4A] hover:text-[#F5811F] transition-colors">
+            <a href="mailto:contact@ccspl.com.np" class="flex items-center gap-3 text-sm font-semibold text-[#0B2A4A] hover:text-[#F5811F] transition-colors">
                 <span class="flex items-center justify-center w-8 h-8 rounded-full bg-orange-50 shrink-0">
                     <i class="fa-solid fa-envelope text-[#F5811F] text-xs"></i>
                 </span>
-                <span class="truncate">bhandaripawan841@gmail.com</span>
+                <span class="truncate">contact@ccspl.com.np</span>
             </a>
         </div>
 
@@ -179,9 +179,9 @@
                     <span>01-5910818</span>
                 </a>
                 <span class="text-white/20 font-light px-0.5">|</span>
-                <a href="mailto:bhandaripawan841@gmail.com" class="flex items-center gap-2 text-white hover:text-[#F5811F] transition">
+                <a href="mailto:contact@ccspl.com.np" class="flex items-center gap-2 text-white hover:text-[#F5811F] transition">
                     <i class="fa-solid fa-envelope text-[#F5811F]"></i>
-                    <span>bhandaripawan841@gmail.com</span>
+                    <span>contact@ccspl.com.np</span>
                 </a>
             </div>
 
@@ -547,44 +547,7 @@
                             submitting: false,
                             submitted: false,
                             errorMessage: '',
-                            formData: { name: '', email: '', phone: '', service: '', subject: '', message: '' },
-                            async submitForm() {
-                                this.submitting = true;
-                                this.submitted = false;
-                                this.errorMessage = '';
-                                try {
-                                    const res = await fetch('https://formsubmit.co/ajax/bhandaripawan841@gmail.com', {
-                                        method: 'POST',
-                                        headers: {
-                                            'Content-Type': 'application/json',
-                                            'Accept': 'application/json'
-                                        },
-                                        body: JSON.stringify({
-                                            _subject: `New CCSPL Website Message: ${this.formData.subject || 'General Inquiry'}`,
-                                            _template: 'table',
-                                            _captcha: 'false',
-                                            'Full Name': this.formData.name,
-                                            'Email Address': this.formData.email,
-                                            'Phone Number': this.formData.phone,
-                                            'Service Required': this.formData.service || 'General Inquiry',
-                                            'Subject': this.formData.subject,
-                                            'Message': this.formData.message
-                                        })
-                                    });
-                                    const data = await res.json();
-                                    if (res.ok && data.success !== 'false') {
-                                        this.submitted = true;
-                                        this.formData = { name: '', email: '', phone: '', service: '', subject: '', message: '' };
-                                    } else {
-                                        this.errorMessage = 'Could not send message. Please try again or call 01-5910818 directly.';
-                                    }
-                                } catch (e) {
-                                    console.error('Form submit error:', e);
-                                    this.errorMessage = 'Network error. Please call 01-5910818 or email bhandaripawan841@gmail.com directly.';
-                                } finally {
-                                    this.submitting = false;
-                                }
-                            }
+                            formData: { name: '', email: '', phone: '', service: '', subject: '', message: '' }
                          }">
                         
                         <div class="flex items-center justify-between mb-6 pb-4 border-b border-gray-100">
@@ -627,7 +590,7 @@
                             </button>
                         </div>
 
-                        <form @submit.prevent="submitForm" class="space-y-4 sm:space-y-5">
+                        <form id="contact-form" class="space-y-4 sm:space-y-5">
                             
                             <!-- Full Name -->
                             <div>
@@ -691,12 +654,12 @@
                                         <select id="contact-service" x-model="formData.service"
                                             class="w-full rounded-xl border border-gray-300 bg-gray-50/50 pl-10 pr-4 py-3 text-sm text-[#0B2A4A] focus:bg-white focus:border-[#F5811F] focus:ring-2 focus:ring-[#F5811F]/20 outline-none transition duration-200 appearance-none">
                                             <option value="" disabled selected>Select a Service</option>
-                                            <option value="building">Building Construction</option>
-                                            <option value="road">Road Construction</option>
-                                            <option value="bridge">Bridge & Infrastructure</option>
-                                            <option value="government">Government Contract Inquiry</option>
-                                            <option value="general">General Inquiry</option>
-                                            <option value="other">Other</option>
+                                            <option value="Building Construction">Building Construction</option>
+                                            <option value="Road Construction">Road Construction</option>
+                                            <option value="Bridge & Infrastructure">Bridge & Infrastructure</option>
+                                            <option value="Government Contract Inquiry">Government Contract Inquiry</option>
+                                            <option value="General Inquiry">General Inquiry</option>
+                                            <option value="Other">Other</option>
                                         </select>
                                         <span class="absolute inset-y-0 right-0 flex items-center pr-3.5 pointer-events-none text-gray-400">
                                             <i class="fa-solid fa-chevron-down text-xs"></i>
@@ -786,13 +749,13 @@
                         </div>
 
                         <!-- Email Address Card -->
-                        <a href="mailto:bhandaripawan841@gmail.com" class="rounded-2xl bg-[#EAF3FA]/80 border border-[#C4DDF2]/80 p-4 sm:p-5 shadow-sm hover:border-[#F5811F]/40 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-center gap-4">
+                        <a href="mailto:contact@ccspl.com.np" class="rounded-2xl bg-[#EAF3FA]/80 border border-[#C4DDF2]/80 p-4 sm:p-5 shadow-sm hover:border-[#F5811F]/40 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-center gap-4">
                             <div class="flex items-center justify-center w-11 h-11 rounded-xl bg-[#F5811F]/10 text-[#F5811F] text-lg shrink-0">
                                 <i class="fa-solid fa-envelope-open-text"></i>
                             </div>
                             <div class="flex-1 min-w-0">
                                 <h3 class="font-[Montserrat] font-bold text-[#0B2A4A] text-base mb-0.5">Email Address</h3>
-                                <p class="text-sm text-[#F5811F] font-bold leading-snug truncate">bhandaripawan841@gmail.com</p>
+                                <p class="text-sm text-[#F5811F] font-bold leading-snug truncate">contact@ccspl.com.np</p>
                                 <p class="text-xs text-gray-500 mt-0.5">Response guaranteed within 1-2 business days</p>
                             </div>
                         </a>
@@ -830,6 +793,8 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/nepali-date-converter/dist/nepali-date-converter.umd.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="js/email.js" defer></script>
     <script src="js/main.js" defer></script>
 
 </body>
