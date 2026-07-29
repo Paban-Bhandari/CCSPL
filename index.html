@@ -99,6 +99,20 @@
 </head>
 <body class="bg-gray-50 text-[#0B2A4A] font-[Inter]" x-data="{ sidebarOpen: false }">
 
+    <div id="page-loader" class="fixed inset-0 z-[100] flex items-center justify-center bg-white/95 backdrop-blur-sm transition-opacity duration-500 ease-out">
+        <div class="text-center px-6">
+            <img src="assets/CCSPL LOGO.png" alt="CCSPL logo" class="mx-auto h-20 w-auto object-contain">
+            <div class="mt-6 flex items-center justify-center gap-2">
+                <span class="h-3 w-3 rounded-full bg-[#F5811F] animate-bounce"></span>
+                <span class="h-3 w-3 rounded-full bg-[#F5811F] animate-bounce [animation-delay:120ms]"></span>
+                <span class="h-3 w-3 rounded-full bg-[#F5811F] animate-bounce [animation-delay:240ms]"></span>
+                <span class="h-3 w-3 rounded-full bg-[#F5811F] animate-bounce [animation-delay:360ms]"></span>
+                <span class="h-3 w-3 rounded-full bg-[#F5811F] animate-bounce [animation-delay:480ms]"></span>
+            </div>
+            <p class="mt-4 text-sm font-semibold uppercase tracking-[0.35em] text-[#0B2A4A]/80">Loading...</p>
+        </div>
+    </div>
+
     <!-- MOBILE / TABLET TOP HEADER (shown only below lg) -->
     <header class="lg:hidden fixed top-0 left-0 right-0 z-40 flex flex-col shadow-sm">
         <!-- Top: Utility Bar (shown on sm & md) -->
@@ -599,7 +613,7 @@
                 </div>
 
                 <div class="max-w-6xl mx-auto text-center text-gray-400">
-                    Projects section content — coming next
+                    Will be added soon ......
                 </div>
             </div>
         </section>

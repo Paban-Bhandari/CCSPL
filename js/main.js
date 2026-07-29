@@ -44,6 +44,30 @@
 
 
 // ============================================================
+// Page Loader
+// ============================================================
+function initPageLoader() {
+    const loader = document.getElementById('page-loader');
+
+    if (!loader) return;
+
+    const hideLoader = () => {
+        loader.classList.add('opacity-0', 'pointer-events-none');
+        setTimeout(() => {
+            loader.remove();
+        }, 500);
+    };
+
+    if (document.readyState === 'complete') {
+        hideLoader();
+    } else {
+        window.addEventListener('load', hideLoader, { once: true });
+    }
+}
+
+initPageLoader();
+
+// ============================================================
 // Sidebar Active Link & ScrollSpy
 // ============================================================
 function initScrollSpy() {
